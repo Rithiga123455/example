@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor and Business Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin: 5px 0;
+        }
+
+        form input, form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            background-color: #28a745;
+        }
+
+        form button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Investor and Business Platform</h1>
+        <nav>
+            <a href="#investors">Investors</a>
+            <a href="#businesses">Businesses</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    
+    <section id="investors">
+        <h2>For Investors</h2>
+        <button id="showInvestors">Show Investors</button>
+        <div id="investorList"></div>
+    </section>
+
+    <section id="businesses">
+        <h2>For Businesses</h2>
+        <button id="showBusinesses">Show Businesses</button>
+        <div id="businessList"></div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const investorList = document.getElementById('investorList');
+            const businessList = document.getElementById('businessList');
+
+            document.getElementById('showInvestors').addEventListener('click', () => {
+                investorList.innerHTML = `
+                    <h3>Investor Profiles</h3>
+                    <ul>
+                        <li>Investor 1: $500,000 budget</li>
+                        <li>Investor 2: $1,000,000 budget</li>
+                        <li>Investor 3: $250,000 budget</li>
+                    </ul>
+                `;
+            });
+
+            document.getElementById('showBusinesses').addEventListener('click', () => {
+                businessList.innerHTML = `
+                    <h3>Business Opportunities</h3>
+                    <ul>
+                        <li>Business 1: Seeking $100,000</li>
+                        <li>Business 2: Seeking $200,000</li>
+                        <li>Business 3: Seeking $50,000</li>
+                    </ul>
+                `;
+            });
+
+            document.getElementById('contactForm').addEventListener('submit', (event) => {
+                event.preventDefault();
+                alert('Thank you for your message!');
+            });
+        });
+    </script>
+</body>
+</html>
